@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<inkscape-extension xmlns="http://www.inkscape.org/namespace/inkscape/extension">
+  <name>StairRails</name>
+  <id>org.inkscape.StairRails</id>
+    <param name="usermenu" type="notebook">
+      <page name="settings" gui-text="Settings">
+		<param name="staircase_width" type="float" precision="3" min="0.5" max="9999.0" gui-text="Staircase width (in Dimensional Units):">2.0</param>
+		<param name="staircase_height" type="float" precision="3" min="0.5" max="9999.0" gui-text="Staircase height (in Dimensional Units):">2.0</param>
+		<param name="staircase_depth" type="float" precision="3" min="0.5" max="9999.0" gui-text="Staircase depth (in Dimensional Units):">2.0</param>
+		<param name ="numstairs" type="int" min="0" max="999" gui-text="Number of stairs (risers):">3</param>
+		<param name="landing_length" type="float" precision="3" min="0.0" max="9999.0" gui-text="Landing length (in Dimensional Units):">0.0</param>
+		<param name="landing_depth" type="float" precision="3" min="0.0" max="9999.0" gui-text="Landing depth (in Dimensional Units):">0.0</param>
+		<param name="rail_height" type="float" precision="3" min="0.5" max="9999.0" gui-text="Rail height (in Dimensional Units):">1.0</param>
+		<param name ="rails_per_step" type="int" min="0" max="999" gui-text="Rail bars per step:">2</param>
+
+		<param name="door_width" type="float" precision="3" min="0" max="9999.0" gui-text="Back rail gap (in Dimensional Units):">2.0</param>
+		
+        
+
+        <param name="unit" type="optiongroup" appearance="combo" gui-text="Dimensional units:">
+            <option translatable="no" value="in">in</option>
+            <option translatable="no" value="px">px</option>
+            <option translatable="no" value="pt">pt</option>
+            <option translatable="no" value="ft">ft</option>
+            <option translatable="no" value="yd">yd</option>
+            <option translatable="no" value="mm">mm</option>
+            <option translatable="no" value="cm">cm</option>
+            <option translatable="no" value="m">m</option>
+            <option translatable="no" value="km">km</option>
+        </param>
+      </page>
+	   <page name="advset" gui-text="Advanced">
+	   		<param name="railgap_ratio" type="float" precision="3" min="0.5" max="100.0" gui-text="Rail to gap ratio % :">60</param>
+			<param name="off_center_distance" type="float" precision="3" min="-9999.0" max="9999.0" gui-text="Stairs off-center (in Dimensional Units):">0</param>
+			<param name="door_off_center_distance" type="float" precision="3" min="-9999" max="9999.0" gui-text="Back gap off-center amount (in Dimensional Units):">0.0</param>
+			<param name="maketoprail" type="bool" gui-text="Build a rail for top of staircase:">false</param>
+			<param name="rail_thick" type="float" precision="3" min="0.5" max="49" gui-text="Rail thickness % of rail height:">10</param>
+			<param name="bottomgap" type="float" precision="3" min="0" max="99" gui-text="Gap underneath rail (in dimensional units):">.2</param>
+      </page>
+	  <page name="tabs" gui-text="Tabs/Scores">
+			<param name ="tabangle" type="float" min="0.0" max="90.0" gui-text="Angle of tab edges (degrees):">45.0</param>
+			<param name="tabheight" type="float" precision="3" min="0.01" max="9999.0" gui-text="Height of tab (in Dimensional Units):">0.25</param>
+			<param name="dashlength" type="float" precision="3" min="0.0" max="9999.0" gui-text="Length of dashline(zero for solid line) (in Dimensional Units):">0.07</param>
+	  </page>
+      <page name="_help" gui-text="Help">
+        <label xml:space="preserve">Construct steps and railings for 3D house.</label>
+      </page>
+    </param>
+  <effect needs-live-preview="false">
+    <!--object-type>path</object-type-->
+    <effects-menu>
+      <submenu name="Papercraft"/>
+    </effects-menu>
+  </effect>
+  <script>
+    <command location="inx" interpreter="python">StairRails.py</command>
+  </script>
+</inkscape-extension>
