@@ -366,7 +366,7 @@ class StairRails(inkex.EffectExtension):
     
     def effect(self):
         layer = self.svg.get_current_layer()
-        scale =self.svg.unittouu('1in')
+        scale =self.svg.unittouu('1'+self.options.unit)
         sidepath = pathStruct()
         backpath = pathStruct()
         backpatha = pathStruct()
